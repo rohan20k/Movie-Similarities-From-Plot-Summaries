@@ -1,1 +1,7 @@
 # Movie-Similarities-From-Plot-Summaries
+In this project a data set is used which has top movies from the IMDB's top 100 list and their plot summaries along with plot summaries from their respective Wikipedia pages. 
+We combine the plot summaries provided by IMDB and Wikipedia for each movie and make a single plot for that movie to make it easier for computation and increases chances of better results. 
+Through NLTK which is the Natural Language Tool Kit for Python we are performing tokenization and stemming on our plot summaries. 
+Now to identify which are the significant words in the plot summary of a movie we use Count Vectorizer which helps us in identifying words with the highest frequency and connect it with the theme of the movie but since this could lead to a problem of wrongly identifying words like "the", "a" etc. as the significant words based on their count, we use  Term Frequency-Inverse Document Frequency (TF-IDF) method which helps in overcoming this shortcoming by identifying the significant word based on the number of occurences but at the same time reduces the importance of the word if it occurs significantly in other plot summaries also. 
+Now the TF-IDF Vectorizer is fitted to convert our data to numerical form. 
+Considering for our data we are not considering the genres for classifying movies we are dealing with unsupervised learning here and so we use k-means clustering as a method here to group similar movies together and form a dendrogram.
